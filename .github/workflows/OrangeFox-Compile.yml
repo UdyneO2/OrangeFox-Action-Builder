@@ -26,7 +26,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch'
         required: true
-        default: 'android-12.1'
+        default: 'fox-12.1'
       DEVICE_PATH:
         description: 'Specify your device path.'
         required: true
@@ -102,7 +102,6 @@ jobs:
         set +e
         source build/envsetup.sh
         set -e
-        export FOX_USE_SPECIFIC_MAGISK_ZIP=${GITHUB_WORKSPACE}/Magisk/Magisk-v26.3.zip
         ${{ steps.fox_branch.outputs.value }}
 
     - name: Set Build Date # For Build Date Info, currently using Asia/Manila
